@@ -18,6 +18,7 @@ WebDriver driver;
 		driver.navigate().to("http://gamebattles.majorleaguegaming.com/");
 		
 		ElementAction(driver, GameBattles.HomePage.LoginHeaderButton(driver), SeleniumActions.Click);
+		//Cuenta desechable no hay problema si se usa 
 		ElementAction(driver, GameBattles.LoginPage.LoginTextBox(driver), SeleniumActions.Type, "GBDubsSec");
 		ElementAction(driver, GameBattles.LoginPage.LoginPasswordBox(driver), SeleniumActions.Type, "SelTest01");
 		ElementAction(driver, GameBattles.LoginPage.LoginButton(driver), SeleniumActions.Click);

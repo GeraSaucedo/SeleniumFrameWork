@@ -18,24 +18,25 @@ public class OrbitzTest extends DriverHandler{
 		driver = new DriverBuilder(driverType).withDefaultOptions().build();
 		
 		driver.navigate().to("https://www.orbitz.com");
+		/*
 		
-		//ElementAction(driver, Orbitz.HomePage.FlightHotelButton(driver), SeleniumActions.Click);
+		ElementAction(driver, Orbitz.HomePage.FlightHotelButton(driver), SeleniumActions.Click);
 		ElementAction(driver, Orbitz.HomePage.CityOrgTextBox(driver), SeleniumActions.Type,"Saltillo");
 		Thread.sleep(2000);
 		ElementAction(driver, Orbitz.HomePage.CitySelector(driver), SeleniumActions.Click);
 		ElementAction(driver, Orbitz.HomePage.CityDestTextBox(driver), SeleniumActions.Type,"Dubai");
 		Thread.sleep(2000);
 		ElementAction(driver, Orbitz.HomePage.CitySelector(driver), SeleniumActions.Click);
+		*/
 		
 		ElementAction(driver, Orbitz.HomePage.DepartCalendar(driver), SeleniumActions.Type,"09/30/2018");
-		Thread.sleep(1000);
-		
-		ElementAction(driver, Orbitz.HomePage.ReturnCalendar(driver), SeleniumActions.Click);
-		Thread.sleep(3000);
+		//ElementAction(driver, Orbitz.HomePage.ReturnCalendar(driver), SeleniumActions.Click);
+		//Thread.sleep(3000);
 		ElementAction(driver, Orbitz.HomePage.ReturnCalendar(driver), SeleniumActions.Clear);
-		Thread.sleep(3000);
-		//ElementAction(driver, Orbitz.HomePage.ReturnCalendar(driver), SeleniumActions.Type,"10/10/2018");
+		ElementAction(driver, Orbitz.HomePage.ReturnCalendar(driver), SeleniumActions.Type,"10/10/2018");
 		//Thread.sleep(1000);
+		
+		/*
 		ElementAction(driver, Orbitz.HomePage.RoomsDropDown(driver), SeleniumActions.DropDownSelectByValue, "1");
 		ElementAction(driver, Orbitz.HomePage.AdultsDropDown(driver), SeleniumActions.DropDownSelectByValue, "1");
 		ElementAction(driver, Orbitz.HomePage.ChildDropDown(driver), SeleniumActions.DropDownSelectByValue, "1");
@@ -84,6 +85,7 @@ public class OrbitzTest extends DriverHandler{
 		ElementAction(driver, Orbitz.FinalPage.NoInsurPackRadioButton(driver), SeleniumActions.Click);
 		ElementAction(driver, Orbitz.FinalPage.NoInsureCarRadioButton(driver), SeleniumActions.Click);		
 		
+		*/
 				
 	}
 	
