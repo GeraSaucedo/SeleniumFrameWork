@@ -17,31 +17,31 @@ WebDriver driver;
 		
 		driver.navigate().to("http://gamebattles.majorleaguegaming.com/");
 		
-		performAction(driver, GameBattles.HomePage.LoginHeaderButton(driver), SeleniumActions.Click);
-		performAction(driver, GameBattles.LoginPage.LoginTextBox(driver), SeleniumActions.Type, "GBDubsSec");
-		performAction(driver, GameBattles.LoginPage.LoginPasswordBox(driver), SeleniumActions.Type, "SelTest01");
-		performAction(driver, GameBattles.LoginPage.LoginButton(driver), SeleniumActions.Click);
+		ElementAction(driver, GameBattles.HomePage.LoginHeaderButton(driver), SeleniumActions.Click);
+		ElementAction(driver, GameBattles.LoginPage.LoginTextBox(driver), SeleniumActions.Type, "GBDubsSec");
+		ElementAction(driver, GameBattles.LoginPage.LoginPasswordBox(driver), SeleniumActions.Type, "SelTest01");
+		ElementAction(driver, GameBattles.LoginPage.LoginButton(driver), SeleniumActions.Click);
 		Thread.sleep(3000);
-		performAction(driver, GameBattles.LogedInPage.MyTeams(driver), SeleniumActions.MouseHover);
+		ElementAction(driver, GameBattles.LogedInPage.MyTeams(driver), SeleniumActions.MouseHover);
 		Thread.sleep(2000);
-		performAction(driver, GameBattles.LogedInPage.SinglesTeam(driver), SeleniumActions.Click);
+		ElementAction(driver, GameBattles.LogedInPage.SinglesTeam(driver), SeleniumActions.Click);
 		Thread.sleep(2000);
-		performAction(driver, GameBattles.TeamPage.DimmisAlertButton(driver), SeleniumActions.Click);
-		performAction(driver, GameBattles.CloseCookiesPoli(driver), SeleniumActions.Click);
+		ElementAction(driver, GameBattles.TeamPage.DimmisAlertButton(driver), SeleniumActions.Click);
+		ElementAction(driver, GameBattles.CloseCookiesPoli(driver), SeleniumActions.Click);
 		Thread.sleep(1500);
-		performAction(driver, GameBattles.TeamPage.FindMatchButton(driver), SeleniumActions.Click);
+		ElementAction(driver, GameBattles.TeamPage.FindMatchButton(driver), SeleniumActions.Click);
 		Thread.sleep(2000);
-		performAction(driver, GameBattles.MatchFinderPage.ChallengeButton(driver), SeleniumActions.Click);
+		ElementAction(driver, GameBattles.MatchFinderPage.ChallengeButton(driver), SeleniumActions.Click);
 		Thread.sleep(2000);
-		Scroll(driver, 0, 500);
+		DriverActions.Scroll(driver, 0, 500);
 		Thread.sleep(2000);
-		performAction(driver, GameBattles.ChallengePage.MapSetExecution(driver), SeleniumActions.DropDownSelectByValue, "1711");
+		ElementAction(driver, GameBattles.ChallengePage.MapSetExecution(driver), SeleniumActions.DropDownSelectByValue, "1711");
 		Thread.sleep(2000);
-		performAction(driver, GameBattles.ChallengePage.RegionNA(driver), SeleniumActions.DropDownSelectByValue, "North America");
-		performAction(driver, GameBattles.ChallengePage.TunningCompetitiveRadio(driver), SeleniumActions.Click);
-		performAction(driver, GameBattles.ChallengePage.MapVariatonForge(driver), SeleniumActions.DropDownSelectByValue,"Forge");
-		//performAction(driver, GameBattles.ChallengePage.AceptTermCheckBox(driver), SeleniumActions.Click);
-		//performAction(driver, GameBattles.ChallengePage.PostMatchButton(driver), SeleniumActions.Click);
+		ElementAction(driver, GameBattles.ChallengePage.RegionNA(driver), SeleniumActions.DropDownSelectByValue, "North America");
+		ElementAction(driver, GameBattles.ChallengePage.TunningCompetitiveRadio(driver), SeleniumActions.Click);
+		ElementAction(driver, GameBattles.ChallengePage.MapVariatonForge(driver), SeleniumActions.DropDownSelectByValue,"Forge");
+		//ElementAction(driver, GameBattles.ChallengePage.AceptTermCheckBox(driver), SeleniumActions.Click);
+		//ElementAction(driver, GameBattles.ChallengePage.PostMatchButton(driver), SeleniumActions.Click);
 		
 	}
 	
