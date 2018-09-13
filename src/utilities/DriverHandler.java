@@ -1,5 +1,7 @@
 package utilities;
 
+import java.util.ArrayList;
+import java.util.Set;
 
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -13,7 +15,7 @@ public class DriverHandler {
 	static Actions action;
 	static Select select;
 
-	public void performAction(WebDriver driver, WebElement element, SeleniumActions action, String value) {
+	public void ElementAction(WebDriver driver, WebElement element, SeleniumActions action, String value) {
 		
 		js = ((JavascriptExecutor)driver); 
 		
@@ -24,11 +26,14 @@ public class DriverHandler {
 		case DropDownSelectByValue:
 			DropDownSelectByValue(element, value);
 			break;
-		default:
+		case Clear:
+			Clear(element);
+			break;
+		default: System.out.println("PerformAction ACCION NO VALIDA O METODO USADO INCORRECTAMENTE");
 		}
 	}
 	
-public void performAction(WebDriver driver, WebElement element, SeleniumActions action) {
+public void ElementAction(WebDriver driver, WebElement element, SeleniumActions action) {
 		
 		js = ((JavascriptExecutor)driver); 
 		
@@ -43,9 +48,13 @@ public void performAction(WebDriver driver, WebElement element, SeleniumActions 
 		case MouseHover:
 				MouseHover(driver, element);
 			break;
-		default:
+		case Clear:
+				Clear(element);
+				break;
+		default: System.out.println("PerformAction ACCION NO VALIDA O METODO USADO INCORRECTAMENTE");
 		}
 	}
+
 	
 	
 	private void Type(WebElement element, String value) {
@@ -59,6 +68,14 @@ public void performAction(WebDriver driver, WebElement element, SeleniumActions 
 	private void Click(WebElement element) {
 		try {
 			element.click();
+		}catch(Exception e) {
+			System.out.println(e.getMessage());
+		}
+	}
+	
+	private void Clear(WebElement element) {
+		try {
+			element.clear();
 		}catch(Exception e) {
 			System.out.println(e.getMessage());
 		}
@@ -81,10 +98,29 @@ public void performAction(WebDriver driver, WebElement element, SeleniumActions 
 		select.selectByValue(value);
 	}
 	
-	//mejorar metodo
-	public static void Scroll(WebDriver driver, int x, int y) {
-		 js = ((JavascriptExecutor)driver);
-		 js.executeScript("window.scrollBy("+x+","+y+")");
+	
+	public static class DriverActions {
+		public static void Scroll(WebDriver driver, int x, int y) {
+			 js = ((JavascriptExecutor)driver);
+			 js.executeScript("window.scrollBy("+x+","+y+")");
+		}
+		
+		public static void switchToWindows(WebDriver driver) {
+			String currentWindow = driver.getWindowHandle(); //obtiene el identificador de la ventana activa
+			Set<String> windows = driver.getWindowHandles(); // obtiene las variables de todas las ventanas
+			//windows.remove(currentWindow);		// remueve la ventana activa
+			
+			for(String x: windows) {
+				if(x != currentWindow) {
+					driver.switchTo().window(x);
+				}
+			}
+		}
+		
+		public static void switchToTab(WebDriver driver, int tab) {
+			 ArrayList<String> tabs = new ArrayList<String> (driver.getWindowHandles());
+			    driver.switchTo().window(tabs.get(tab));
+		}
 	}
 	
 }
