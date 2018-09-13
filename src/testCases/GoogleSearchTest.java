@@ -18,7 +18,7 @@ public class GoogleSearchTest extends DriverHandler {
 		
 		driver.navigate().to("https://www.google.com");
 		
-		performAction(driver, SeleniumActions.HightLight, GoogleWebSite.HomePage.SearchInput(driver), "Hexaware");
+		performAction(driver, GoogleWebSite.HomePage.SearchInput(driver),SeleniumActions.HightLight, "Hexaware");
 		
 		//GoogleWebSite.HomePage.SearchInput(driver).sendKeys(Keys.ENTER);
 	}

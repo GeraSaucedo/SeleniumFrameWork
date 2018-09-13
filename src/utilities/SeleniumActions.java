@@ -15,6 +15,10 @@ public enum SeleniumActions {
 	SwitchToWindows,
 	SwitchToFrame,
 	Clear,
-	Scroll;
+	ScrollDown300,
+	MouseHover,
+	DropDownSelectByValue,
+	DropDownSelectByVisible,
+	DropDownSelectByIndex;
 	
 }
