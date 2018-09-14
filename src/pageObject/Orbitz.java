@@ -39,16 +39,23 @@ public class Orbitz {
 			return element;
 		}
 		
-		public static WebElement DepartCalendar(WebDriver driver) {
+		public static WebElement DepartCalendartxt(WebDriver driver) {
 			try {
 				element = driver.findElement(By.id("package-departing-hp-package"));
 			}catch(Exception e) { System.out.println(e.getMessage()); }
 			return element;
 		}
 		
-		public static WebElement ReturnCalendar(WebDriver driver) {
+		public static WebElement ReturnCalendartxt(WebDriver driver) {
 			try {
 				element = driver.findElement(By.id("package-returning-hp-package"));
+			}catch(Exception e) { System.out.println(e.getMessage()); }
+			return element;
+		}
+		
+		public static WebElement ReturnCalendarPicker(WebDriver driver) {
+			try {
+				element = driver.findElement(By.xpath("//*[@data-day=\"10\" and @data-month=\"9\" ]"));
 			}catch(Exception e) { System.out.println(e.getMessage()); }
 			return element;
 		}
@@ -96,7 +103,7 @@ public class Orbitz {
 		
 	}
 	
-	public static class SelectDeparture {
+	public static class ChooseRoom {
 		public static WebElement SearchButton(WebDriver driver) {
 			try {
 				element = driver.findElement(By.xpath("(//a[contains(@class,\"book-button\")])[1]"));
@@ -105,8 +112,8 @@ public class Orbitz {
 		}
 	}
 	
-	public static class SelectReturn{
-		public static WebElement SearchButton(WebDriver driver) {
+	public static class ChooseFlight{
+		public static WebElement SelectButton(WebDriver driver) {
 			try {
 				element = driver.findElement(By.xpath("(//button[@data-test-id=\"select-button\"])[1]"));
 			}catch(Exception e) { System.out.println(e.getMessage()); }
@@ -124,7 +131,8 @@ public class Orbitz {
 		
 	}
 	
-	public static class FinalPage{
+	//MEJORAR METODOS DE ESTA CLASE hacerlos genericos y añadir indice de persona
+	public static class ReviewAndBook{
 		public static WebElement FirstNameTxt (WebDriver driver) {
 			try {
 				element = driver.findElement(By.id("firstname[0]"));
@@ -267,15 +275,23 @@ public class Orbitz {
 			return element;
 		}
 		
+		public static WebElement CompleteBookingButton (WebDriver driver) {
+			try {
+				element = driver.findElement(By.id("complete-booking"));
+			}catch(Exception e) { System.out.println(e.getMessage()); }
+			return element;
+		}
 		
-	 public static WebElement FinalStepButton (WebDriver driver) {
+		
+	}
+	
+	public static class OrderDetails{
+		 public static WebElement GoToFinalStepButton (WebDriver driver) {
 				try {
-					element = driver.findElement(By.xpath("(//*[text()=\"Go to Final Step\"])[1]"));
+					element = driver.findElement(By.xpath("(//*[@class=\"btn-primary btn-action\"])[1]"));
 				}catch(Exception e) { System.out.println(e.getMessage()); }
 				return element;
 			}
-		
-		
 	}
 	
 }
