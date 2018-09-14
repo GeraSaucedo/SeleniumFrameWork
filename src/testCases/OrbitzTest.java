@@ -54,7 +54,7 @@ public class OrbitzTest extends DriverHandler{
 		Thread.sleep(8000);
 		
 		
-		System.out.println("CHOOSE YOUR FLIGHT???");
+		//Choose your Flight
 		//select your departure
 		ElementAction(driver, Orbitz.ChooseFlight.SelectButton(driver), SeleniumActions.Click);
 		Thread.sleep(3000);
@@ -66,7 +66,7 @@ public class OrbitzTest extends DriverHandler{
 		ElementAction(driver, Orbitz.OrderDetails.GoToFinalStepButton(driver), SeleniumActions.Click);
 		Thread.sleep(5000);
 		
-		//Final screen | pay screen
+		//Final screen | booking screen
 		
 		ElementAction(driver, Orbitz.ReviewAndBook.FirstNameTxt(driver), SeleniumActions.Type,"Juan");
 		ElementAction(driver, Orbitz.ReviewAndBook.MiddleNameTxt(driver), SeleniumActions.Type,"Pedro");
